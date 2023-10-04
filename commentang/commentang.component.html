@@ -22,14 +22,14 @@
 <div style="max-width: 100%;"> 
   <h1> Deixe um comentário </h1>
 </div>
-
+<form id='commentform'>
 <div style="width: 100%">
-   <textarea type="text" id="fname" class='letextarea' maxlength="150" (input) = 'checkforcharlimit($event)'>
+   <textarea type="text" id="fname" class='letextarea' maxlength="150" name='comment_full' (input) ='checkforcharlimit($event)'>
    </textarea>
 </div>
-
+</form>
 <div style="max-width: 63%; display:flex; justify-content: space-between">
-  <button style="border-radius: 12px; font-family: fantasy" [disabled]='disabled'> Enviar comentário </button>
+  <button form='commentform' style="border-radius: 12px; font-family: fantasy" [disabled]='disabled' type="submit" (click)='submitform($event)'> Enviar comentário </button>
   <div *ngIf='disabled' style='color:red'> Limite atingido! </div>
   <p class="characterlimit"> {{changeme}}/150 </p>
 </div>

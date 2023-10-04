@@ -17,5 +17,11 @@ checkforcharlimit(e:any) {
   }
      
   }
-
+submitform(e:any){
+  e.preventDefault();
+  const form : any = document.getElementById('commentform');
+  const formData : any = new FormData(form);
+  const formjson = Object.fromEntries(formData.entries());
+  console.log(formjson);
+}
 }
