@@ -1,0 +1,37 @@
+<style>
+.letextarea {
+  resize: none;
+  border-radius: 6px;
+  width: 400px;
+  height: 150px;
+  max-width: 100%;
+}
+.characterlimit {
+  color:rgb(13, 61, 221); 
+}
+
+
+
+</style>
+
+
+
+
+<div style="max-width: 50%;   font-family: fantasy;">
+
+<div style="max-width: 100%;"> 
+  <h1> Deixe um comentário </h1>
+</div>
+
+<div style="width: 100%">
+   <textarea type="text" id="fname" class='letextarea' maxlength="150" (input) = 'checkforcharlimit($event)'>
+   </textarea>
+</div>
+
+<div style="max-width: 63%; display:flex; justify-content: space-between">
+  <button style="border-radius: 12px; font-family: fantasy" [disabled]='disabled'> Enviar comentário </button>
+  <div *ngIf='disabled' style='color:red'> Limite atingido! </div>
+  <p class="characterlimit"> {{changeme}}/150 </p>
+</div>
+
+</div>
